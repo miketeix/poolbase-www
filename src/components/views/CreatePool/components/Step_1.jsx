@@ -53,8 +53,7 @@ class StepOne extends Component {
               fullWidth
             />
           </div>
-          {this.props.currentUser &&
-            !disabledFields.ownerAddress && (
+          {this.props.currentUser && (
               <div className="col-md-3">
                 <Button
                   type="button"
