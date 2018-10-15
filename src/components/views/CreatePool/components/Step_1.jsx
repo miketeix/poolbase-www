@@ -64,7 +64,6 @@ class StepOne extends Component {
                   Choose wallet
                 </Button>
                 <ChooseWalletDialog
-                  wallets={currentUser.wallets}
                   selectedValue={values.ownerAddress}
                   open={this.state.walletDialogOpen}
                   onClose={this.handleWalletDialogClose}

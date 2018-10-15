@@ -153,7 +153,6 @@ class StepTwo extends Component {
                 Choose wallet
               </Button>
               <ChooseWalletDialog
-                wallets={currentUser.wallets}
                 selectedValue={values.adminPayoutAddress}
                 open={this.state.walletDialogOpen}
                 onClose={this.handleWalletDialogClose}
