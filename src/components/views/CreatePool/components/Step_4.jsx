@@ -46,6 +46,27 @@ class StepFour extends Component {
               fullWidth
             />
           </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <TextField
+                id="disclaimer"
+                name="disclaimer"
+                label="Pool disclaimer"
+                value={values.disclaimer}
+                multiline
+                rowsMax="14"
+                autoComplete="Off"
+                spellCheck="false"
+                placeholder="Do you want to show a disclaimer for your participants?"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={touched.disclaimer && !!errors.disclaimer}
+                helperText={touched.disclaimer && errors.disclaimer}
+                margin="normal"
+                fullWidth
+              />
+            </div>
         </div>
       </div>
     );

@@ -47,6 +47,27 @@ class NameAndDescription extends Component {
             />
           </div>
         </div>
+        <div className="row">
+          <div className="col">
+            <TextField
+              id="disclaimer"
+              name="disclaimer"
+              label="Pool disclaimer"
+              value={values.disclaimer}
+              multiline
+              rowsMax="7"
+              autoComplete="Off"
+              spellCheck="false"
+              placeholder="Say a few words about your pool"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={touched.disclaimer && !!errors.disclaimer}
+              helperText={touched.disclaimer && errors.disclaimer}
+              margin="normal"
+              fullWidth
+            />
+          </div>
+        </div>
       </div>
     );
   }

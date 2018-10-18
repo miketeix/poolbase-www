@@ -165,24 +165,28 @@ export const poolStatusMap = {
 
 export const teamList = [
   {
-    imgUrl: '/img/team/finn_schaedlich.jpg',
+    imgUrl: '/img/team/finn.jpg',
     name: 'Finn Schädlich',
     title: 'Co-founder',
+    linkedinUrl: 'https://www.linkedin.com/in/finn-sch%C3%A4dlich/',
   },
   {
-    imgUrl: '/img/team/viktor_jamiolkowski.jpg',
+    imgUrl: '/img/team/viktor.jpg',
     name: 'Viktor Jamiolkowski',
     title: 'Co-founder',
+    linkedinUrl: 'https://www.linkedin.com/in/jviktor/',
   },
   {
-    imgUrl: '/img/team/gustavo_guimaraes.jpg',
+    imgUrl: '/img/team/gus.jpg',
     name: 'Gustavo Guimarães',
     title: 'Co-founder',
+    linkedinUrl: 'https://www.linkedin.com/in/gustavocguimaraes/',
   },
   {
-    imgUrl: '/img/team/michael_teixeira.jpg',
+    imgUrl: '/img/team/mike.jpg',
     name: 'Michael Teixeira',
     title: 'Co-founder',
+    linkedinUrl: 'https://www.linkedin.com/in/miketeix/',
   },
 ];
 

@@ -61,6 +61,7 @@ class Pool extends BasicModel {
 
     this.name = data.name || '';
     this.description = data.description || '';
+    this.disclaimer = data.disclaimer || '';
     this.status = data.status || Pool.PENDING_DEPLOYMENT;
     this.minContribution = data.minContribution || 0;
     this.maxContribution = data.maxContribution || 0;
@@ -89,6 +90,7 @@ class Pool extends BasicModel {
       poolbaseFee: this.poolbaseFee,
       name: this.name,
       description: this.description,
+      disclaimer: this.disclaimer,
       minContribution: this.minContribution,
       maxContribution: this.maxContribution,
       whitelist: this.whitelist,
@@ -172,6 +174,15 @@ class Pool extends BasicModel {
   set description(value) {
     this.checkType(value, ['string'], 'description');
     this.myDescription = value;
+  }
+
+  get disclaimer() {
+    return this.myDisclaimer;
+  }
+
+  set disclaimer(value) {
+    this.checkType(value, ['string'], 'disclaimer');
+    this.myDisclaimer = value;
   }
 
   get maxAllocation() {

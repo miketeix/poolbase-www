@@ -17,6 +17,7 @@ const PoolReview = ({ formik: { values } }) => {
   const {
     name,
     description,
+    disclaimer,
     ownerAddress,
     maxAllocation,
     minContribution,
@@ -45,6 +46,12 @@ const PoolReview = ({ formik: { values } }) => {
               Pool Description
             </TableCell>
             <TableCell>{description}</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell component="th" scope="row">
+              Pool Disclaimer
+            </TableCell>
+            <TableCell>{disclaimer}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell component="th" scope="row">
