@@ -11,9 +11,12 @@ import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import Button from '@material-ui/core/Button';
 
 import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
+
+import ChooseWalletDialog from '../../../ChooseWalletDialog';
 
 import Pool from '../../../../models/Pool';
 
@@ -36,17 +39,17 @@ class StepTwo extends Component {
   }
   handleWalletDialogClose(value) {
     if (!!value) {
-      this.props.formik.setFieldValue('ownerAddress', value);
+      this.props.formik.setFieldValue('adminPayoutAddress', value);
     }
     this.setState({ walletDialogOpen: false });
   }
   render() {
-    const { formik, poolbaseFee } = this.props; // *** formik props passed in from MultistepForm parent component
+    const { formik, poolbaseFee, currentUser } = this.props; // *** formik props passed in from MultistepForm parent component
     const { values, handleChange, handleBlur, touched, errors } = formik;
     return (
       <div>
         <div className="row">
-          <div className="col-md-2">
+          <div className="col-md-4">
             <TextField
               id="fee"
               name="fee"
@@ -69,7 +72,7 @@ class StepTwo extends Component {
                         <span>
                           <strong>
                             <span className="underline">
-                              {(parseFloat(values.fee || 0) + poolbaseFee).toFixed(2)}%
+                              {+(parseFloat(values.fee || 0) + poolbaseFee).toFixed(2)}%
                             </span>{' '}
                             Total
                           </strong>
@@ -96,14 +99,14 @@ class StepTwo extends Component {
               fullWidth
             />
           </div>
-          <div className="col-md-2">
+          <div className="col-md-4">
             <FormControl fullWidth margin="normal">
               <InputLabel
                 htmlFor="feePayoutCurrency"
                 shrink={!!values.feePayoutCurrency}
                 error={touched.feePayoutCurrency && !!errors.feePayoutCurrency}
               >
-                Currency
+                Fee Payout Currency
               </InputLabel>
               <Select
                 value={values.feePayoutCurrency}
@@ -119,6 +122,8 @@ class StepTwo extends Component {
               </FormHelperText>
             </FormControl>
           </div>
+        </div>
+        <div className="row align-items-center">
           <div className="col-md-8">
             <TextField
               id="adminPayoutAddress"
@@ -137,6 +142,23 @@ class StepTwo extends Component {
               fullWidth
             />
           </div>
+          {currentUser && (
+            <div className="col-md-3">
+              <Button
+                type="button"
+                color="primary"
+                size="small"
+                onClick={this.handleChooseWalletClick}
+              >
+                Choose wallet
+              </Button>
+              <ChooseWalletDialog
+                selectedValue={values.adminPayoutAddress}
+                open={this.state.walletDialogOpen}
+                onClose={this.handleWalletDialogClose}
+              />
+            </div>
+            )}
         </div>
         <FieldArray
           name="admins"
@@ -145,7 +167,8 @@ class StepTwo extends Component {
               <div className="spacer-top-40">
                 <div className="d-flex align-items-center">
                   <FormLabel>Admins</FormLabel>
-                  <Tooltip title="Add">
+                  { values.admins.length < 5 &&
+                    <Tooltip title="Add">
                     <div>
                       <IconButton
                         aria-label="Add admin"
@@ -157,7 +180,7 @@ class StepTwo extends Component {
                         <PlusIcon color="#3f51b5" />
                       </IconButton>
                     </div>
-                  </Tooltip>
+                  </Tooltip>}
                 </div>
                 {values.admins &&
                   values.admins.map((admin, index) => {

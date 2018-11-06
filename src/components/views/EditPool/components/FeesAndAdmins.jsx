@@ -76,7 +76,7 @@ class StepTwo extends Component {
                             <span>
                               <strong>
                                 <span className="underline">
-                                  {(parseFloat(values.fee || 0) + pool.poolbaseFee).toFixed(2)}%
+                                  {+(parseFloat(values.fee || 0) + pool.poolbaseFee).toFixed(2)}%
                                 </span>{' '}
                                 Total
                               </strong>

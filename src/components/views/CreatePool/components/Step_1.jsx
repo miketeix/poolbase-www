@@ -53,8 +53,7 @@ class StepOne extends Component {
               fullWidth
             />
           </div>
-          {this.props.currentUser &&
-            !disabledFields.ownerAddress && (
+          {this.props.currentUser && (
               <div className="col-md-3">
                 <Button
                   type="button"
@@ -65,7 +64,6 @@ class StepOne extends Component {
                   Choose wallet
                 </Button>
                 <ChooseWalletDialog
-                  wallets={currentUser.wallets}
                   selectedValue={values.ownerAddress}
                   open={this.state.walletDialogOpen}
                   onClose={this.handleWalletDialogClose}

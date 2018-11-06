@@ -95,72 +95,72 @@ class Application extends Component {
                           <Route
                             exact
                             path="/pools/create"
-                            component={props => <CreatePool currentUser={currentUser} {...props} />}
+                            render={props => <CreatePool currentUser={currentUser} {...props} />}
                           />
                           <Route
                             exact
                             path="/pools/:poolId"
-                            component={props => <ViewPool currentUser={currentUser} {...props} />}
+                            render={props => <ViewPool currentUser={currentUser} {...props} />}
                           />
                           <Route
                             exact
                             path="/pools/:poolId/edit"
-                            component={props => <EditPool currentUser={currentUser} {...props} />}
+                            render={props => <EditPool currentUser={currentUser} {...props} />}
                           />
                           <Route
                             exact
                             path="/pools/:poolId/update"
-                            component={props => <Update currentUser={currentUser} {...props} />}
+                            render={props => <Update currentUser={currentUser} {...props} />}
                           />
                           <Route
                             exact
                             path="/pools/:poolId/payout"
-                            component={props => <ClosePool currentUser={currentUser} {...props} />}
+                            render={props => <ClosePool currentUser={currentUser} {...props} />}
                           />
                           <Route
                             exact
                             path="/pools/:poolId/contribute"
-                            component={props => <Contribute currentUser={currentUser} {...props} />}
+                            render={props => <Contribute currentUser={currentUser} {...props} />}
                           />
                           <Route
                             exact
                             path="/pools/:poolId/confirmTokenBatch"
-                            component={props => (
+                            render={props => (
                               <ConfirmTokenBatch currentUser={currentUser} {...props} />
                             )}
                           />
                           <Route
                             exact
                             path="/pools/:poolId/pendingTx"
-                            component={props => <Deploy currentUser={currentUser} {...props} />}
+                            render={props => <Deploy currentUser={currentUser} {...props} />}
                           />
                           <Route
                             exact
                             path="/contributions/:contributionId/pendingTx"
-                            component={props => <Deploy currentUser={currentUser} {...props} />}
+                            render={props => <Deploy currentUser={currentUser} {...props} />}
                           />
                           <Route
                             exact
                             path="/dashboard"
-                            component={props => <Dashboard currentUser={currentUser} {...props} />}
+                            render={props => <Dashboard currentUser={currentUser} {...props} />}
                           />
                           <CurrentUserProtectedRoute
                             exact
                             path="/signin"
                             currentUser={currentUser}
-                            component={props => <SignIn onSignIn={onSignIn} {...props} />}
+                            render={props => <SignIn onSignIn={onSignIn} {...props} />}
                           />
                           <CurrentUserProtectedRoute
                             exact
                             path="/signup"
                             currentUser={currentUser}
-                            component={props => <SignUp onSignIn={onSignIn} {...props} />}
+                            render={props => <SignUp onSignIn={onSignIn} {...props} />}
                           />
                           <PrivateRoute
                             exact
                             path="/profile"
                             currentUser={currentUser}
-                            component={props => (
+                            render={props => (
                               <EditProfile
                                 currentUser={currentUser}
                                 onSignIn={onSignIn}

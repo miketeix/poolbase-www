@@ -103,7 +103,7 @@ class CreatePool extends Component {
             validationSchemas={validationSchemas}
           >
             <StepOne currentUser={this.props.currentUser} />
-            <StepTwo poolbaseFee={poolbaseFee} />
+            <StepTwo poolbaseFee={poolbaseFee} currentUser={this.props.currentUser} />
             <StepThree />
             <StepFour />
             <PoolReview />

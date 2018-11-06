@@ -1,12 +1,12 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 
-const CurrentUserProtectedRoute = ({ currentUser, component, ...rest }) => (
+const CurrentUserProtectedRoute = ({ currentUser, render, ...rest }) => (
   <Route
     {...rest}
     render={props => {
       return !currentUser ? (
-        component(props)
+        render(props)
       ) : (
         <Redirect
           to={{
