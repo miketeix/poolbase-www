@@ -8,7 +8,6 @@ import Paper from '@material-ui/core/Paper';
 import WalletIcon from '@material-ui/icons/AccountBalanceWallet';
 
 import WalletList from './components/WalletList';
-import InfoList from './components/InfoList';
 import PoolList from './components/PoolList';
 import ContributionList from './components/ContributionList';
 
@@ -31,29 +30,6 @@ class Dashboard extends Component {
       isLoading: true,
       mode: CREATOR_MODE,
       pools: [],
-      infoListItems: [
-        {
-          icon: <WalletIcon />,
-          text: 'Currently invested 6 Eth',
-          action: () => {
-            console.log('actioned');
-          },
-        },
-        {
-          icon: <WalletIcon />,
-          text: 'Claim your token from Nexo',
-          action: () => {
-            console.log('actioned');
-          },
-        },
-        {
-          icon: <WalletIcon />,
-          text: 'Knowledgebase Contact Support',
-          action: () => {
-            console.log('actioned');
-          },
-        },
-      ],
     };
 
     this.handleModeChange = this.handleModeChange.bind(this);
@@ -147,9 +123,6 @@ class Dashboard extends Component {
               <div className="row">
                 <div className="col-md-4">
                   <Paper>
-                    <InfoList items={this.state.infoListItems} />
-                  </Paper>
-                  <Paper className="mt-4">
                     <WalletList wallets={this.props.currentUser.wallets} />
                   </Paper>
                 </div>

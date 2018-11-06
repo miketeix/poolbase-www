@@ -197,25 +197,17 @@ class ViewPool extends Component {
                 >
                   Contribute to Pool
                 </Button>
-                <div className="row margin-top-bottom">
+
+                { this.props.currentUser &&
+                  this.state.myContributions.length &&
+                  pool.status === PoolModel.ACTIVE && <div className="row margin-top-bottom">
                   <div className="col">
                     <Button variant="outlined" fullWidth>
                       Withdraw
                     </Button>
                   </div>
-                  <div className="col">
-                    <Button variant="outlined" fullWidth>
-                      Bookmark
-                    </Button>
-                  </div>
-                </div>
-                <div className="row justify-content-start">
-                  <div className="col">
-                    Whitelist <strong>Off</strong>
-                  </div>
-                  <div className="col-md-auto">
-                    Autodistribution <strong>On</strong>
-                  </div>
+                </div> }
+                <div className="row justify-content-start mt-2">
                   <div className="col">
                     Fee <strong>{pool.fee}%</strong>
                   </div>
