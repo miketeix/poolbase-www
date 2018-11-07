@@ -42,8 +42,15 @@ async function getNetwork(networkId) {
 
 function getWeb3() {
   Web3.providers.HttpProvider.prototype.sendAsync = Web3.providers.HttpProvider.prototype.send;
-  const web3 = new Web3(window.web3.currentProvider);
-  return web3;
+  let provider;
+
+  if (window.ethereum) {
+    provider = new Web3(window.ethereum);
+    window.ethereum.enable().catch(() => {});
+  } else if (window.web3) {
+    provider = new Web3(window.web3.currentProvider);
+  }
+  return provider;
 }
 
 function isMetamaskInstalled() {
@@ -51,9 +58,8 @@ function isMetamaskInstalled() {
 
   if (web3 === undefined || web3.currentProvider.constructor.name !== 'MetamaskInpageProvider') {
     return false;
-  } else {
-    return true;
   }
+  return true;
 }
 
 export { getNetwork, getWeb3, isMetamaskInstalled };

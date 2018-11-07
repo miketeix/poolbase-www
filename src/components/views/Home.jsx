@@ -50,7 +50,7 @@ class Home extends Component {
               <div className="container">
                 <div className="row">
                   <div className="col-sm-5 ">
-                    <h1>Powered by the Ethereum blockchain!</h1>
+                    <h1>Fast, Safe way for cryptocurrency pooling</h1>
                     <p>Pool digital currency today with the security of smart contracts</p>
                     <PillButton onClick={() => this.props.history.push('/pools/create')}>
                       Create a Pool
@@ -243,9 +243,8 @@ class Home extends Component {
                 <div className="col-sm-6 col-md-3">
                   <h4>More security</h4>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet finibus
-                    nisl. Morbi sagittis sapien ut nibh ultricies faucibus. Morbi sit amet metus
-                    ligula. Praesent sed tempor nibh, non eleifend augue.
+                  By using the Ethereum blockchain and smart contracts
+                  we can establish a high level of trust for investors.
                   </p>
                   <p>
                     <a href="">Read more about security</a>
@@ -254,9 +253,9 @@ class Home extends Component {
                 <div className="col-sm-6 col-md-3">
                   <h4>Quick and easy to use</h4>
                   <p>
-                    Curabitur sed lorem tellus. Suspendisse ultricies justo vel purus fermentum
-                    viverra. Vivamus tellus est, sagittis a mattis in, vestibulum eget odio. Duis
-                    luctus sapien ligula, a porta orci egestas non.
+                    We build PoolBase to enable people around the globe
+                    to take part in the new way of investing.
+                    It has never been easier.
                   </p>
                   <p>
                     <a href="">Create your Pool</a>
@@ -265,20 +264,18 @@ class Home extends Component {
                 <div className="col-sm-6 col-md-3">
                   <h4>Low cost</h4>
                   <p>
-                    Pellentesque quis dolor pharetra nibh ullamcorper vulputate a sed odio. Donec
-                    sagittis convallis tincidunt. Donec volutpat dictum lacus a fringilla. Praesent
-                    convallis nec sapien sed eleifend.
+                    Investing collectively has never been more efficient.
+                    By using newest technology we are able to provide lowest fees.
                   </p>
                   <p>
-                    <a href="">Read about the fees</a>
+                    <a href="">Read more about the fees</a>
                   </p>
                 </div>
                 <div className="col-sm-6 col-md-3">
-                  <h4>Transparent as the code</h4>
+                  <h4>The future is here</h4>
                   <p>
-                    Quisque placerat lectus quis dictum ultricies. Praesent consequat, tortor ut
-                    scelerisque aliquet, enim libero imperdiet felis, vel luctus orci magna a
-                    ligula.
+                  Blockchain is the accelerator for the ideas of tomorrow.
+                  Fund your own project or participate directly in new ideas.
                   </p>
                   <p>
                     <a href="">Read more about our product</a>
@@ -337,13 +334,13 @@ class Home extends Component {
                   <h4>Support</h4>
                   <ul>
                     <li>
-                      <a href="">Help center</a>
+                      <a href="https://poolbase.zendesk.com">Help center</a>
                     </li>
                     <li>
                       <a href="">Contact us</a>
                     </li>
                     <li>
-                      <a href="">Telegram support</a>
+                      <a href="https://t.me/joinchat/Hu3hDRJXVFf4m1DFUNxaKQ">Telegram support</a>
                     </li>
                     <li>
                       <a href="">Reddit group</a>
