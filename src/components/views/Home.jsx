@@ -112,7 +112,7 @@ class Home extends Component {
           </div>
 
           <section className="workflow-section">
-            <h2>That's how PoolBase works</h2>
+            <h2>Our Platform</h2>
 
             <div className="switch">
               <span
@@ -135,49 +135,47 @@ class Home extends Component {
                   <div className="row">
                     <div className="col-md-4">
                       <img
-                        src="https://www.paypalobjects.com/digitalassets/c/website/marketing/emea/de/de/home/de-buyonline-browser1.png"
-                        alt=""
+                        src="\img\Investor_1.png"
+                        alt="Get a Poollink"
                       />
                       <span className="arrow" />
                       <div className="content">
                         <div className="circle">1</div>
                         <p>
-                          <a href="">Sign up</a> completely free with your e-mail address and your
-                          password.
+                           You will get the link to a pool by the admin of your pooling group.<br />
+                         <a href="https://poolbase.zendesk.com/hc/en-us/articles/360004747851-Where-I-can-find-pools-">About Pools</a>
                         </p>
                       </div>
                     </div>
                     <div className="col-md-4">
                       <img
-                        src="https://www.paypalobjects.com/digitalassets/c/website/marketing/emea/de/de/home/de-buyonline-browser1.png"
-                        alt=""
+                        src="\img\Investor_2.png"
+                        alt="Contribute to Pool"
                       />
                       <span className="arrow" />
                       <div className="content">
                         <div className="circle">2</div>
                         <p>
-                          Perform a KYC if that is required by the pool. Choose the pool you want to
-                          participate in.
+                            With some clicks you can participate in the project. Send a transaction to the pool smart contract and you are in!
                         </p>
                       </div>
                     </div>
                     <div className="col-md-4">
                       <img
-                        src="https://www.paypalobjects.com/digitalassets/c/website/marketing/emea/de/de/home/de-buyonline-browser1.png"
-                        alt=""
+                        src="\img\Investor_3.png"
+                        alt="Get Token"
                       />
                       <div className="content">
                         <div className="circle">3</div>
                         <p>
-                          Follow the steps on the &quot;Participate in a pool&quot; page. It&apos;
-                          easy to use.
+                           After the sale is finished, you can claim your exact number of token with a simple transaction.
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="learn-more">
-                  <a href="http://website1.com">Learn More</a>
+                  <a href="https://poolbase.zendesk.com/hc/en-us/categories/360000863432-Using-PoolBase">Learn More</a>
                 </div>
               </div>
             )}
@@ -188,49 +186,46 @@ class Home extends Component {
                   <div className="row">
                     <div className="col-md-4">
                       <img
-                        src="https://www.paypalobjects.com/digitalassets/c/website/marketing/emea/de/de/home/de-sellonline-browser2.png"
-                        alt=""
+                        src="/img/Creator_1.png"
+                        alt="Create Pool"
                       />
                       <span className="arrow" />
                       <div className="content">
                         <div className="circle">1</div>
                         <p>
-                          <a href="">Sign up</a> completely free with your e-mail address and your
-                          password.
+                          We will create an individual smart-contract for your pool, you have the full control. We have no access to the funds. You will receive a custom link for your investors.
                         </p>
                       </div>
                     </div>
                     <div className="col-md-4">
                       <img
-                        src="https://www.paypalobjects.com/digitalassets/c/website/marketing/emea/de/de/home/de-sellonline-browser2.png"
-                        alt=""
+                        src="/img/Creator_2.png"
+                        alt="Send Funds"
                       />
                       <span className="arrow" />
                       <div className="content">
                         <div className="circle">2</div>
                         <p>
-                          Perform a KYC if that is required by the pool. Choose the pool you want to
-                          participate in.
+                          You can send the funds at any time. Contributions and withdrawals are automatically disabled.
                         </p>
                       </div>
                     </div>
                     <div className="col-md-4">
                       <img
-                        src="https://www.paypalobjects.com/digitalassets/c/website/marketing/emea/de/de/home/de-sellonline-browser2.png"
-                        alt=""
+                        src="/img/Creator_3.png"
+                        alt="Confirm Token"
                       />
                       <div className="content">
                         <div className="circle">3</div>
                         <p>
-                          Follow the steps on the &quot;Participate in a pool&quot; page. It&apos;
-                          easy to use.
+                           Once you confirmed the token, your can lay back. The investors can now get their token.
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="learn-more">
-                  <a href="http://website2.com">Learn More</a>
+                  <a href="https://poolbase.zendesk.com/hc/en-us/categories/360000519791-Pool-Creator">Learn More</a>
                 </div>
               </div>
             )}

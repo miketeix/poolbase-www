@@ -74,7 +74,7 @@ class CreatePool extends Component {
               'Wallet & Limits',
               'Fees & Admins',
               'Destination & Whitelist',
-              'Name & Description',
+              'Name, Description & Disclaimer',
               'Review',
             ]}
             onSubmit={(values, actions) => {

@@ -5,6 +5,7 @@ import { ethereumAddress, hexString } from '../../../../lib/validators';
 const validationSchema = Yup.object().shape({
   name: Yup.string().required('Required'),
   description: Yup.string(),
+  disclaimer: Yup.string(),
   ownerAddress: ethereumAddress().required('Required'),
   maxAllocation: Yup.number()
     .min(0, `Must be more than zero`)
