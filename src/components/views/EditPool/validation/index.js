@@ -11,25 +11,25 @@ const validationSchema = Yup.object().shape({
     .min(0, `Must be more than zero`)
     .required('Required'),
   minContribution: Yup.number()
-    .when('maxAllocation', (maxAllocation, schema) => {
-      return maxAllocation
+    .when('maxAllocation', (maxAllocation, schema) =>
+      maxAllocation
         ? schema.max(maxAllocation, 'Must be less than Net max pool allocation')
-        : schema;
-    })
+        : schema,
+    )
     .min(0, `Must be more than zero`)
     .required('Required'),
   maxContribution: Yup.number()
-    .when('maxAllocation', (maxAllocation, schema) => {
-      return maxAllocation
+    .when('maxAllocation', (maxAllocation, schema) =>
+      maxAllocation
         ? schema.max(maxAllocation, 'Must be less than Net max pool allocation')
-        : schema;
-    })
+        : schema,
+    )
     .min(0, `Must be more than zero`)
-    .when('minContribution', (minContribution, schema) => {
-      return minContribution
+    .when('minContribution', (minContribution, schema) =>
+      minContribution
         ? schema.min(minContribution, 'Must be more than Minimum contribution')
-        : schema;
-    })
+        : schema,
+    )
     .required('Required'),
   fee: Yup.number()
     .min(0, `Must be more than zero`)

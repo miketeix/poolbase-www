@@ -3,7 +3,7 @@ import config from './configuration';
 import PoolService from './services/Pool';
 import ContributionService from './services/Contribution';
 
-//Contribution Statuses
+// Contribution Statuses
 export const PENDING_CONFIRMATION = 'pending_confirmation';
 export const CONFIRMED = 'confirmed';
 export const TOKENS_AVAILABLE = 'tokens_available';
@@ -14,7 +14,7 @@ export const PENDING_REFUND = 'pending_refund';
 export const REFUND_RECEIVED = 'refund_received';
 // export const PAUSED = 'paused';
 
-//Pool Statuses
+// Pool Statuses
 export const PENDING_DEPLOYMENT = 'pending_deployment';
 export const ACTIVE = 'active';
 export const PENDING_CLOSE_POOL = 'pending_close_pool';
@@ -26,7 +26,7 @@ export const REFUNDS_ENABLED = 'refunds_enabled';
 export const PAUSED = 'paused';
 
 export const statusDisplayMap = {
-  //Contributions
+  // Contributions
   [PENDING_CONFIRMATION]: 'Pending Confirmation',
   [CONFIRMED]: 'Confirmed',
   [TOKENS_AVAILABLE]: 'Tokens Available',
@@ -35,7 +35,7 @@ export const statusDisplayMap = {
   [REFUND_AVAILABLE]: 'Refund Available',
   [PENDING_REFUND]: 'Pending Refund',
   [REFUND_RECEIVED]: 'Refunded',
-  //Pools
+  // Pools
   [PENDING_DEPLOYMENT]: 'Pending Deploy',
   [ACTIVE]: 'Active',
   [PENDING_CLOSE_POOL]: 'Pending Send Funds',
@@ -64,6 +64,9 @@ export const contributionStatusMap = {
     displayText: 'Tokens Available',
     actionText: 'Claim Token',
     action: ({ id: contributionId, poolAddress, ownerAddress }) => async () => {
+      console.log('poolAddress', poolAddress);
+      console.log('ownerAddress', ownerAddress);
+
       await ContributionService.patch(contributionId, {
         status: PENDING_CLAIM_TOKENS,
         poolAddress,
@@ -141,7 +144,7 @@ export const poolStatusMap = {
     displayText: statusDisplayMap[PAYOUT_ENABLED],
     actionText: 'Add Token Batch',
     action: pool => () => {
-      history.push(`pools/${pool.id}/confirmTokenBatch`); //token address needs to be disabled, without needing
+      history.push(`pools/${pool.id}/confirmTokenBatch`); // token address needs to be disabled, without needing
     },
   },
   [PENDING_ENABLE_REFUNDS]: {
@@ -190,6 +193,4 @@ export const teamList = [
   },
 ];
 
-export const getEtherscanTxLink = txHash => {
-  return `${config.etherscan}/tx/${txHash}`;
-};
+export const getEtherscanTxLink = txHash => `${config.etherscan}/tx/${txHash}`;

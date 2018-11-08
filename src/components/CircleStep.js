@@ -1,8 +1,10 @@
 import React from 'react';
+
 const CircleStep = ({ step }) => {
   const style = {
     position: 'relative',
     top: '3px',
+
     marginRight: '0.5rem',
   };
   return (

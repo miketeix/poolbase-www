@@ -16,33 +16,43 @@ class Pool extends BasicModel {
   static get PENDING_DEPLOYMENT() {
     return PENDING_DEPLOYMENT;
   }
+
   static get ACTIVE() {
     return ACTIVE;
   }
+
   static get PENDING_CLOSE_POOL() {
     return PENDING_CLOSE_POOL;
   }
+
   static get CLOSED() {
     return CLOSED;
   }
+
   static get PENDING_TOKEN_BATCH() {
     return PENDING_TOKEN_BATCH;
   }
+
   static get PAYOUT_ENABLED() {
     return PAYOUT_ENABLED;
   }
+
   static get PENDING_ENABLE_REFUNDS() {
     return PENDING_ENABLE_REFUNDS;
   }
+
   static get REFUNDS_ENABLED() {
     return REFUNDS_ENABLED;
   }
+
   static get PAUSED() {
     return PAUSED;
   }
+
   static get CURRENCY_ETHER() {
     return 'ether';
   }
+
   static get CURRENCY_TOKEN() {
     return 'token';
   }
@@ -94,7 +104,7 @@ class Pool extends BasicModel {
       minContribution: this.minContribution,
       maxContribution: this.maxContribution,
       whitelist: this.whitelist,
-      //status, contractAddress set on backend
+      // status, contractAddress set on backend
     };
   }
 

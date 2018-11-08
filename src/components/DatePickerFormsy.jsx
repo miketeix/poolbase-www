@@ -5,7 +5,8 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import 'react-datepicker/dist/react-datepicker.css';
 
-import { getStartOfDayUTC } from '../lib/helpers';
+import {
+  getStartOfDayUTC } from '../lib/helpers';
 
 class DatePickerFormsy extends React.Component {
   constructor(props) {

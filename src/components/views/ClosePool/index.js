@@ -8,7 +8,7 @@ import PoolService from '../../../services/Pool';
 import MultiStepForm from '../../MultiStepForm';
 import StepOne from './components/Step_1';
 
-import validationSchemas from './validation/';
+import validationSchemas from './validation';
 
 import Loader from '../../Loader';
 import { history, isPoolAdmin } from '../../../lib/helpers';
@@ -19,13 +19,11 @@ import { isAuthenticated } from '../../../lib/middleware';
  * @param id       URL parameter which is an id of a pool object
  */
 
-const Header = () => {
-  return (
-    <div>
-      <h1 className="font-xl">Send Payout</h1>
-    </div>
-  );
-};
+const Header = () => (
+  <div>
+    <h1 className="font-xl">Send Payout</h1>
+  </div>
+);
 
 class ClosePool extends Component {
   constructor(props) {
@@ -38,7 +36,12 @@ class ClosePool extends Component {
   }
 
   async componentDidMount() {
-    const { currentUser, match: { params: { poolId } } } = this.props;
+    const {
+      currentUser,
+      match: {
+        params: { poolId },
+      },
+    } = this.props;
     try {
       // await isAuthenticated(currentUser);
 
@@ -56,18 +59,21 @@ class ClosePool extends Component {
       });
     } catch (err) {
       console.log('err', err);
-      //oops something wrong
+      // oops something wrong
     }
   }
 
   render() {
     console.log('this.state.pool', this.state.pool);
-    const { isLoading, pool: { lockPayoutAddress, payoutAddress, payoutTxData } } = this.state;
+    const {
+      isLoading,
+      pool: { lockPayoutAddress, payoutAddress, payoutTxData },
+    } = this.state;
     console.log('lockPayoutAddress', lockPayoutAddress);
     console.log('payoutAddress', payoutAddress);
     console.log('payoutTxData', payoutTxData);
     const initialValues = {
-      lockPayoutAddress: lockPayoutAddress,
+      lockPayoutAddress,
       payoutAddress: payoutAddress || '',
       payoutTxData: payoutTxData || '',
     };
