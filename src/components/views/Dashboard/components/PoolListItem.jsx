@@ -48,7 +48,8 @@ class PoolListItem extends React.Component {
         <div className="net-invested">
           <span className="amount">
             {+pool.netInvested.toFixed(2) || '0'}/{pool.maxAllocation}
-          </span>&nbsp;<span className="denomination">ETH</span>
+          </span>
+          &nbsp;<span className="denomination">ETH</span>
         </div>
         <div>{pool.contributionCount} Contributions</div>
         <div className="status">

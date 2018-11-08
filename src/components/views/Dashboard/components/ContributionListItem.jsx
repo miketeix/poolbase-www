@@ -23,7 +23,7 @@ class ContributionListItem extends React.Component {
     console.log('amountInvested', amountInvested);
     console.log('poolNetInvested', poolNetInvested);
     console.log('tokenBalance', tokenBalance);
-    return amountInvested / poolNetInvested * tokenBalance;
+    return (amountInvested / poolNetInvested) * tokenBalance;
   }
   render() {
     const { contribution } = this.props; //currentUser: { wallets }

@@ -38,7 +38,12 @@ class ClosePool extends Component {
   }
 
   async componentDidMount() {
-    const { currentUser, match: { params: { poolId } } } = this.props;
+    const {
+      currentUser,
+      match: {
+        params: { poolId },
+      },
+    } = this.props;
     try {
       // await isAuthenticated(currentUser);
 
@@ -62,7 +67,10 @@ class ClosePool extends Component {
 
   render() {
     console.log('this.state.pool', this.state.pool);
-    const { isLoading, pool: { lockPayoutAddress, payoutAddress, payoutTxData } } = this.state;
+    const {
+      isLoading,
+      pool: { lockPayoutAddress, payoutAddress, payoutTxData },
+    } = this.state;
     console.log('lockPayoutAddress', lockPayoutAddress);
     console.log('payoutAddress', payoutAddress);
     console.log('payoutTxData', payoutTxData);

@@ -83,110 +83,104 @@ class Application extends Component {
             }) => (
               <div className="full-height">
                 {isLoading && <Loader className="fixed" />}
-                {!isLoading &&
-                  !hasError && (
-                    <div className="full-height">
-                      <MainMenu onSignOut={onSignOut} currentUser={currentUser} />
-                      <section className="page-layout">
-                        <Switch>
-                          {/* Routes are defined here. Persistent data is set as props on components
+                {!isLoading && !hasError && (
+                  <div className="full-height">
+                    <MainMenu onSignOut={onSignOut} currentUser={currentUser} />
+                    <section className="page-layout">
+                      <Switch>
+                        {/* Routes are defined here. Persistent data is set as props on components
                     NOTE order matters, wrong order breaks routes!
                  */}
-                          <Route
-                            exact
-                            path="/pools/create"
-                            render={props => <CreatePool currentUser={currentUser} {...props} />}
-                          />
-                          <Route
-                            exact
-                            path="/pools/:poolId"
-                            render={props => <ViewPool currentUser={currentUser} {...props} />}
-                          />
-                          <Route
-                            exact
-                            path="/pools/:poolId/edit"
-                            render={props => <EditPool currentUser={currentUser} {...props} />}
-                          />
-                          <Route
-                            exact
-                            path="/pools/:poolId/update"
-                            render={props => <Update currentUser={currentUser} {...props} />}
-                          />
-                          <Route
-                            exact
-                            path="/pools/:poolId/payout"
-                            render={props => <ClosePool currentUser={currentUser} {...props} />}
-                          />
-                          <Route
-                            exact
-                            path="/pools/:poolId/contribute"
-                            render={props => <Contribute currentUser={currentUser} {...props} />}
-                          />
-                          <Route
-                            exact
-                            path="/pools/:poolId/confirmTokenBatch"
-                            render={props => (
-                              <ConfirmTokenBatch currentUser={currentUser} {...props} />
-                            )}
-                          />
-                          <Route
-                            exact
-                            path="/pools/:poolId/pendingTx"
-                            render={props => <Deploy currentUser={currentUser} {...props} />}
-                          />
-                          <Route
-                            exact
-                            path="/contributions/:contributionId/pendingTx"
-                            render={props => <Deploy currentUser={currentUser} {...props} />}
-                          />
-                          <Route
-                            exact
-                            path="/dashboard"
-                            render={props => <Dashboard currentUser={currentUser} {...props} />}
-                          />
-                          <CurrentUserProtectedRoute
-                            exact
-                            path="/signin"
-                            currentUser={currentUser}
-                            render={props => <SignIn onSignIn={onSignIn} {...props} />}
-                          />
-                          <CurrentUserProtectedRoute
-                            exact
-                            path="/signup"
-                            currentUser={currentUser}
-                            render={props => <SignUp onSignIn={onSignIn} {...props} />}
-                          />
-                          <PrivateRoute
-                            exact
-                            path="/profile"
-                            currentUser={currentUser}
-                            render={props => (
-                              <EditProfile
-                                currentUser={currentUser}
-                                onSignIn={onSignIn}
-                                {...props}
-                              />
-                            )}
-                          />
-                          <Route
-                            exact
-                            path="/"
-                            render={props => <Home currentUser={currentUser} {...props} />}
-                          />
+                        <Route
+                          exact
+                          path="/pools/create"
+                          render={props => <CreatePool currentUser={currentUser} {...props} />}
+                        />
+                        <Route
+                          exact
+                          path="/pools/:poolId"
+                          render={props => <ViewPool currentUser={currentUser} {...props} />}
+                        />
+                        <Route
+                          exact
+                          path="/pools/:poolId/edit"
+                          render={props => <EditPool currentUser={currentUser} {...props} />}
+                        />
+                        <Route
+                          exact
+                          path="/pools/:poolId/update"
+                          render={props => <Update currentUser={currentUser} {...props} />}
+                        />
+                        <Route
+                          exact
+                          path="/pools/:poolId/payout"
+                          render={props => <ClosePool currentUser={currentUser} {...props} />}
+                        />
+                        <Route
+                          exact
+                          path="/pools/:poolId/contribute"
+                          render={props => <Contribute currentUser={currentUser} {...props} />}
+                        />
+                        <Route
+                          exact
+                          path="/pools/:poolId/confirmTokenBatch"
+                          render={props => (
+                            <ConfirmTokenBatch currentUser={currentUser} {...props} />
+                          )}
+                        />
+                        <Route
+                          exact
+                          path="/pools/:poolId/pendingTx"
+                          render={props => <Deploy currentUser={currentUser} {...props} />}
+                        />
+                        <Route
+                          exact
+                          path="/contributions/:contributionId/pendingTx"
+                          render={props => <Deploy currentUser={currentUser} {...props} />}
+                        />
+                        <Route
+                          exact
+                          path="/dashboard"
+                          render={props => <Dashboard currentUser={currentUser} {...props} />}
+                        />
+                        <CurrentUserProtectedRoute
+                          exact
+                          path="/signin"
+                          currentUser={currentUser}
+                          render={props => <SignIn onSignIn={onSignIn} {...props} />}
+                        />
+                        <CurrentUserProtectedRoute
+                          exact
+                          path="/signup"
+                          currentUser={currentUser}
+                          render={props => <SignUp onSignIn={onSignIn} {...props} />}
+                        />
+                        <PrivateRoute
+                          exact
+                          path="/profile"
+                          currentUser={currentUser}
+                          render={props => (
+                            <EditProfile currentUser={currentUser} onSignIn={onSignIn} {...props} />
+                          )}
+                        />
+                        <Route
+                          exact
+                          path="/"
+                          render={props => <Home currentUser={currentUser} {...props} />}
+                        />
 
-                          <Route component={NotFound} />
-                        </Switch>
-                      </section>
-                    </div>
-                  )}
+                        <Route component={NotFound} />
+                      </Switch>
+                    </section>
+                  </div>
+                )}
 
-                {!isLoading &&
-                  hasError && (
-                    <center>
-                      <h2>Oops, something went wrong...</h2>
-                      <p>Poolbase could not load for some reason. Please try again...</p>
-                    </center>
-                  )}
+                {!isLoading && hasError && (
+                  <center>
+                    <h2>Oops, something went wrong...</h2>
+                    <p>Poolbase could not load for some reason. Please try again...</p>
+                  </center>
+                )}
 
                 <ToastContainer
                   position="top-right"

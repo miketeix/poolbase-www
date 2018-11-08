@@ -17,8 +17,8 @@ import { history } from '../lib/helpers';
 // ToDo: This does not to be a promise task: remove all promisified usage of this in app
 export const isLoggedIn = currentUser =>
   new Promise(resolve => {
-    if (currentUser)
-      resolve(); // && currentUser.email
+    if (currentUser) resolve();
+    // && currentUser.email
     else history.goBack();
   });
 
@@ -37,8 +37,8 @@ export const isLoggedIn = currentUser =>
  */
 export const isAuthenticated = currentUser =>
   new Promise(resolve => {
-    if (currentUser)
-      resolve(); //&& currentUser.email
+    if (currentUser) resolve();
+    //&& currentUser.email
     else history.goBack();
   });
 

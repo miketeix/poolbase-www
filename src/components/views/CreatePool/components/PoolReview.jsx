@@ -102,44 +102,41 @@ const PoolReview = ({ formik: { values } }) => {
             </TableCell>
             <TableCell>{String(lockPayoutAddress)}</TableCell>
           </TableRow>
-          {lockPayoutAddress &&
-            payoutAddress && (
-              <TableRow>
-                <TableCell component="th" scope="row">
-                  Desintation Address
-                </TableCell>
-                <TableCell>{payoutAddress}</TableCell>
-              </TableRow>
-            )}
-          {lockPayoutAddress &&
-            payoutTxData && (
-              <TableRow>
-                <TableCell component="th" scope="row">
-                  Destination Tx Data
-                </TableCell>
-                <TableCell>{payoutTxData}</TableCell>
-              </TableRow>
-            )}
-          {hasWhitelist &&
-            !!whitelist.length && (
-              <TableRow>
-                <TableCell component="th" scope="row">
-                  Whitelist
-                </TableCell>
-                <Table>
-                  <TableBody>
-                    {whitelist.map(({ address, name }, index) => {
-                      return (
-                        <TableRow key={index}>
-                          <TableCell>{address}</TableCell>
-                          <TableCell>{name}</TableCell>
-                        </TableRow>
-                      );
-                    })}
-                  </TableBody>
-                </Table>
-              </TableRow>
-            )}
+          {lockPayoutAddress && payoutAddress && (
+            <TableRow>
+              <TableCell component="th" scope="row">
+                Desintation Address
+              </TableCell>
+              <TableCell>{payoutAddress}</TableCell>
+            </TableRow>
+          )}
+          {lockPayoutAddress && payoutTxData && (
+            <TableRow>
+              <TableCell component="th" scope="row">
+                Destination Tx Data
+              </TableCell>
+              <TableCell>{payoutTxData}</TableCell>
+            </TableRow>
+          )}
+          {hasWhitelist && !!whitelist.length && (
+            <TableRow>
+              <TableCell component="th" scope="row">
+                Whitelist
+              </TableCell>
+              <Table>
+                <TableBody>
+                  {whitelist.map(({ address, name }, index) => {
+                    return (
+                      <TableRow key={index}>
+                        <TableCell>{address}</TableCell>
+                        <TableCell>{name}</TableCell>
+                      </TableRow>
+                    );
+                  })}
+                </TableBody>
+              </Table>
+            </TableRow>
+          )}
         </TableBody>
       </Table>
     </Paper>

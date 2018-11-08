@@ -204,23 +204,21 @@ class StepTwo extends Component {
                   <div>
                     <div className="d-flex align-items-center">
                       <FormLabel>Admins</FormLabel>
-                      {!disabledFields.admins &&
-                        values.admins &&
-                        !values.admins.length && (
-                          <Tooltip title="Add">
-                            <div>
-                              <IconButton
-                                aria-label="Add admin"
-                                onClick={() => {
-                                  fieldArrayHelpers.push({ address: '', name: '' });
-                                }}
-                                disableRipple
-                              >
-                                <PlusIcon color="#3f51b5" />
-                              </IconButton>
-                            </div>
-                          </Tooltip>
-                        )}
+                      {!disabledFields.admins && values.admins && !values.admins.length && (
+                        <Tooltip title="Add">
+                          <div>
+                            <IconButton
+                              aria-label="Add admin"
+                              onClick={() => {
+                                fieldArrayHelpers.push({ address: '', name: '' });
+                              }}
+                              disableRipple
+                            >
+                              <PlusIcon color="#3f51b5" />
+                            </IconButton>
+                          </div>
+                        </Tooltip>
+                      )}
                     </div>
                     {values.admins &&
                       values.admins.map((admin, index) => {

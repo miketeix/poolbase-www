@@ -54,22 +54,22 @@ class StepOne extends Component {
             />
           </div>
           {this.props.currentUser && (
-              <div className="col-md-3">
-                <Button
-                  type="button"
-                  color="primary"
-                  size="small"
-                  onClick={this.handleChooseWalletClick}
-                >
-                  Choose wallet
-                </Button>
-                <ChooseWalletDialog
-                  selectedValue={values.ownerAddress}
-                  open={this.state.walletDialogOpen}
-                  onClose={this.handleWalletDialogClose}
-                />
-              </div>
-            )}
+            <div className="col-md-3">
+              <Button
+                type="button"
+                color="primary"
+                size="small"
+                onClick={this.handleChooseWalletClick}
+              >
+                Choose wallet
+              </Button>
+              <ChooseWalletDialog
+                selectedValue={values.ownerAddress}
+                open={this.state.walletDialogOpen}
+                onClose={this.handleWalletDialogClose}
+              />
+            </div>
+          )}
         </div>
         <div className="row">
           <div className="col-md-3">

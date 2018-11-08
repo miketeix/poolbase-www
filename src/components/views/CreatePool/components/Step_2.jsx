@@ -158,7 +158,7 @@ class StepTwo extends Component {
                 onClose={this.handleWalletDialogClose}
               />
             </div>
-            )}
+          )}
         </div>
         <FieldArray
           name="admins"
@@ -167,20 +167,21 @@ class StepTwo extends Component {
               <div className="spacer-top-40">
                 <div className="d-flex align-items-center">
                   <FormLabel>Admins</FormLabel>
-                  { values.admins.length < 5 &&
+                  {values.admins.length < 5 && (
                     <Tooltip title="Add">
-                    <div>
-                      <IconButton
-                        aria-label="Add admin"
-                        onClick={() => {
-                          fieldArrayHelpers.push({ address: '', name: '' });
-                        }}
-                        disableRipple
-                      >
-                        <PlusIcon color="#3f51b5" />
-                      </IconButton>
-                    </div>
-                  </Tooltip>}
+                      <div>
+                        <IconButton
+                          aria-label="Add admin"
+                          onClick={() => {
+                            fieldArrayHelpers.push({ address: '', name: '' });
+                          }}
+                          disableRipple
+                        >
+                          <PlusIcon color="#3f51b5" />
+                        </IconButton>
+                      </div>
+                    </Tooltip>
+                  )}
                 </div>
                 {values.admins &&
                   values.admins.map((admin, index) => {

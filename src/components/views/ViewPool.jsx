@@ -124,7 +124,7 @@ class ViewPool extends Component {
 
     let poolProgress = 0;
     if (!isLoading) {
-      poolProgress = pool.netInvested / pool.maxAllocation * 100;
+      poolProgress = (pool.netInvested / pool.maxAllocation) * 100;
     }
 
     return (
@@ -200,15 +200,17 @@ class ViewPool extends Component {
                   Contribute to Pool
                 </Button>
 
-                { this.props.currentUser &&
+                {this.props.currentUser &&
                   this.state.myContributions.length &&
-                  pool.status === PoolModel.ACTIVE && <div className="row margin-top-bottom">
-                  <div className="col">
-                    <Button variant="outlined" fullWidth>
-                      Withdraw
-                    </Button>
-                  </div>
-                </div> }
+                  pool.status === PoolModel.ACTIVE && (
+                    <div className="row margin-top-bottom">
+                      <div className="col">
+                        <Button variant="outlined" fullWidth>
+                          Withdraw
+                        </Button>
+                      </div>
+                    </div>
+                  )}
                 <div className="row justify-content-start mt-2">
                   <div className="col">
                     Fee <strong>{pool.fee}%</strong>

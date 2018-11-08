@@ -40,9 +40,9 @@ class CreatePool extends Component {
 
   async componentDidMount() {
     this.setState({ isLoading: true });
-    const { data: [{ percent: percentFee }] } = await feathersClient
-      .service('fees')
-      .find({ query: { type: 'standard' } });
+    const {
+      data: [{ percent: percentFee }],
+    } = await feathersClient.service('fees').find({ query: { type: 'standard' } });
 
     this.setState({
       poolbaseFee: percentFee,
@@ -94,7 +94,8 @@ class CreatePool extends Component {
                     <p>
                       {err.message} <br />
                       <p>
-                        Please sign up to create a pool<br />
+                        Please sign up to create a pool
+                        <br />
                       </p>
                     </p>,
                   );

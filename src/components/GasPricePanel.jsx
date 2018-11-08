@@ -23,7 +23,9 @@ class GasPricePanel extends Component {
   }
 
   render() {
-    const { gasPrice: { safeLow, standard, fast } } = this.state;
+    const {
+      gasPrice: { safeLow, standard, fast },
+    } = this.state;
 
     return (
       <div className="gas-price-panel">

@@ -33,7 +33,11 @@ class Deploy extends React.Component {
   }
   async componentDidMount() {
     window.scrollTo(0, 0);
-    const { match: { params: { poolId, contributionId } } } = this.props;
+    const {
+      match: {
+        params: { poolId, contributionId },
+      },
+    } = this.props;
 
     const resourceId = poolId || contributionId;
 

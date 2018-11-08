@@ -57,7 +57,13 @@ class Update extends Component {
   }
 
   async componentDidMount() {
-    const { currentUser, match: { params: { poolId } }, location: { hash } } = this.props;
+    const {
+      currentUser,
+      match: {
+        params: { poolId },
+      },
+      location: { hash },
+    } = this.props;
 
     const updateProperty = hash && hash.substr(1);
 

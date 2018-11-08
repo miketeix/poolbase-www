@@ -40,7 +40,12 @@ class ConfirmTokenBatch extends Component {
   }
 
   async componentDidMount() {
-    const { currentUser, match: { params: { poolId } } } = this.props;
+    const {
+      currentUser,
+      match: {
+        params: { poolId },
+      },
+    } = this.props;
     try {
       await isAuthenticated(currentUser);
 
@@ -61,7 +66,10 @@ class ConfirmTokenBatch extends Component {
   }
 
   render() {
-    const { isLoading, pool: { tokenAddress } } = this.state;
+    const {
+      isLoading,
+      pool: { tokenAddress },
+    } = this.state;
 
     return (
       <div>
