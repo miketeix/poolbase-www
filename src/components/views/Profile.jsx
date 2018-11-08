@@ -83,25 +83,24 @@ class Profile extends Component {
             <div className="col-md-8 m-auto">
               {isLoading && <Loader className="fixed" />}
 
-              {!isLoading &&
-                !hasError && (
-                  <div>
-                    <GoBackButton history={history} />
+              {!isLoading && !hasError && (
+                <div>
+                  <GoBackButton history={history} />
 
-                    <center>
-                      <Avatar size={100} src={getUserAvatar(user)} round />
-                      <h1>{getUserName(user)}</h1>
-                      {etherScanUrl && (
-                        <p>
-                          <a href={`${etherScanUrl}address/${address}`}>{address}</a>
-                        </p>
-                      )}
-                      {!etherScanUrl && <p>{address}</p>}
-                      <p>{email}</p>
-                      <p>{linkedIn}</p>
-                    </center>
-                  </div>
-                )}
+                  <center>
+                    <Avatar size={100} src={getUserAvatar(user)} round />
+                    <h1>{getUserName(user)}</h1>
+                    {etherScanUrl && (
+                      <p>
+                        <a href={`${etherScanUrl}address/${address}`}>{address}</a>
+                      </p>
+                    )}
+                    {!etherScanUrl && <p>{address}</p>}
+                    <p>{email}</p>
+                    <p>{linkedIn}</p>
+                  </center>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -114,18 +114,18 @@ class MainMenu extends Component {
                         aria-haspopup="true"
                         aria-expanded="false"
                       >
-                        {state.currentUser &&
-                          state.currentUser.avatar && (
-                            <Avatar
-                              className="menu-avatar"
-                              size={30}
-                              src={state.currentUser.avatar}
-                              round
-                            />
-                          )}
+                        {state.currentUser && state.currentUser.avatar && (
+                          <Avatar
+                            className="menu-avatar"
+                            size={30}
+                            src={state.currentUser.avatar}
+                            round
+                          />
+                        )}
 
-                        {state.currentUser &&
-                          state.currentUser.name && <span>{state.currentUser.name}</span>}
+                        {state.currentUser && state.currentUser.name && (
+                          <span>{state.currentUser.name}</span>
+                        )}
 
                         {state.currentUser && !state.currentUser.name && <span>Hi, you!</span>}
                       </Link>

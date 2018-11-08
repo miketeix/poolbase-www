@@ -47,7 +47,12 @@ class Contribute extends Component {
 
   async componentDidMount() {
     window.scrollTo(0, 0);
-    const { currentUser, match: { params: { poolId } } } = this.props;
+    const {
+      currentUser,
+      match: {
+        params: { poolId },
+      },
+    } = this.props;
     try {
       await isAuthenticated(currentUser);
 
@@ -75,7 +80,10 @@ class Contribute extends Component {
   }
 
   render() {
-    const { isLoading, pool: { minContribution, maxContribution } } = this.state;
+    const {
+      isLoading,
+      pool: { minContribution, maxContribution },
+    } = this.state;
 
     return (
       <div>

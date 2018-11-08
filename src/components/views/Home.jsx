@@ -238,8 +238,8 @@ class Home extends Component {
                 <div className="col-sm-6 col-md-3">
                   <h4>More security</h4>
                   <p>
-                  By using the Ethereum blockchain and smart contracts
-                  we can establish a high level of trust for investors.
+                    By using the Ethereum blockchain and smart contracts we can establish a high
+                    level of trust for investors.
                   </p>
                   <p>
                     <a href="">Read more about security</a>
@@ -248,9 +248,8 @@ class Home extends Component {
                 <div className="col-sm-6 col-md-3">
                   <h4>Quick and easy to use</h4>
                   <p>
-                    We build PoolBase to enable people around the globe
-                    to take part in the new way of investing.
-                    It has never been easier.
+                    We build PoolBase to enable people around the globe to take part in the new way
+                    of investing. It has never been easier.
                   </p>
                   <p>
                     <a href="">Create your Pool</a>
@@ -259,8 +258,8 @@ class Home extends Component {
                 <div className="col-sm-6 col-md-3">
                   <h4>Low cost</h4>
                   <p>
-                    Investing collectively has never been more efficient.
-                    By using newest technology we are able to provide lowest fees.
+                    Investing collectively has never been more efficient. By using newest technology
+                    we are able to provide lowest fees.
                   </p>
                   <p>
                     <a href="">Read more about the fees</a>
@@ -269,8 +268,8 @@ class Home extends Component {
                 <div className="col-sm-6 col-md-3">
                   <h4>The future is here</h4>
                   <p>
-                  Blockchain is the accelerator for the ideas of tomorrow.
-                  Fund your own project or participate directly in new ideas.
+                    Blockchain is the accelerator for the ideas of tomorrow. Fund your own project
+                    or participate directly in new ideas.
                   </p>
                   <p>
                     <a href="">Read more about our product</a>

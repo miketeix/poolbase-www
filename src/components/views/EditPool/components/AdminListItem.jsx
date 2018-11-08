@@ -63,23 +63,21 @@ class AdminListItem extends Component {
               disabled={disabledFields.admins}
               {...autoFocusProps}
             />
-            {!address &&
-              !disabledFields.admins &&
-              this.state.hovering && (
-                <div style={addRemoveButtonStyles}>
-                  <Tooltip title="Remove">
-                    <div>
-                      <IconButton
-                        aria-label="Remove item"
-                        onClick={() => remove(index)}
-                        disableRipple
-                      >
-                        <PlusIcon tilt color="grey" />
-                      </IconButton>
-                    </div>
-                  </Tooltip>
-                </div>
-              )}
+            {!address && !disabledFields.admins && this.state.hovering && (
+              <div style={addRemoveButtonStyles}>
+                <Tooltip title="Remove">
+                  <div>
+                    <IconButton
+                      aria-label="Remove item"
+                      onClick={() => remove(index)}
+                      disableRipple
+                    >
+                      <PlusIcon tilt color="grey" />
+                    </IconButton>
+                  </div>
+                </Tooltip>
+              </div>
+            )}
           </div>
           {address && (
             <div className="d-flex col-md-4">
@@ -100,28 +98,26 @@ class AdminListItem extends Component {
               />
               {!disabledFields.admins && (
                 <div className="d-flex" style={{ height: '43px' }}>
-                  {values.admins &&
-                    values.admins.length < 5 &&
-                    index === values.admins.length - 1 && (
-                      <div style={this.state.hovering ? { marginRight: '-12px' } : {}}>
-                        <Tooltip title="Add another">
-                          <div>
-                            <IconButton
-                              aria-label="Add item"
-                              onClick={() => {
-                                if (errors.admins && errors.admins.length) return;
-                                // if (values.admins && values.admins.length < 5) return
-                                push({ address: '', name: '' });
-                              }}
-                              disabled={!address || !!errors.admins}
-                              disableRipple
-                            >
-                              <PlusIcon disabled={!address || !!errors.admins} color="#3f51b5" />
-                            </IconButton>
-                          </div>
-                        </Tooltip>
-                      </div>
-                    )}
+                  {values.admins && values.admins.length < 5 && index === values.admins.length - 1 && (
+                    <div style={this.state.hovering ? { marginRight: '-12px' } : {}}>
+                      <Tooltip title="Add another">
+                        <div>
+                          <IconButton
+                            aria-label="Add item"
+                            onClick={() => {
+                              if (errors.admins && errors.admins.length) return;
+                              // if (values.admins && values.admins.length < 5) return
+                              push({ address: '', name: '' });
+                            }}
+                            disabled={!address || !!errors.admins}
+                            disableRipple
+                          >
+                            <PlusIcon disabled={!address || !!errors.admins} color="#3f51b5" />
+                          </IconButton>
+                        </div>
+                      </Tooltip>
+                    </div>
+                  )}
                   {this.state.hovering && (
                     <Tooltip title="Remove">
                       <div>

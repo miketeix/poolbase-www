@@ -11,7 +11,11 @@ import WhitelistTable from '../../../WhitelistTable';
 class StepThree extends Component {
   constructor(props) {
     super(props);
-    const { formik: { values: { hasWhitelist, whitelist } } } = this.props;
+    const {
+      formik: {
+        values: { hasWhitelist, whitelist },
+      },
+    } = this.props;
 
     this.state = {
       whitelist: hasWhitelist && !!whitelist.length ? whitelist : [],

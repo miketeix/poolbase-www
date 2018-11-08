@@ -4,7 +4,9 @@ import TextField from '@material-ui/core/TextField';
 
 class NameAndDescription extends Component {
   render() {
-    const { formik: { values, handleChange, handleBlur, touched, errors } } = this.props; // formik props passed in from Wizard
+    const {
+      formik: { values, handleChange, handleBlur, touched, errors },
+    } = this.props; // formik props passed in from Wizard
     return (
       <div>
         <div className="row">
