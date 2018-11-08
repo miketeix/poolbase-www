@@ -17,27 +17,35 @@ class Contribution extends BasicModel {
   static get PENDING_CONFIRMATION() {
     return PENDING_CONFIRMATION;
   }
+
   static get CONFIRMED() {
     return CONFIRMED;
   }
+
   static get TOKENS_AVAILABLE() {
     return TOKENS_AVAILABLE;
   }
+
   static get PENDING_CLAIM_TOKENS() {
     return PENDING_CLAIM_TOKENS;
   }
+
   static get TOKENS_CLAIMED() {
     return TOKENS_CLAIMED;
   }
+
   static get REFUND_AVAILABLE() {
     return REFUND_AVAILABLE;
   }
+
   static get PENDING_REFUND() {
     return PENDING_REFUND;
   }
+
   static get REFUND_RECEIVED() {
     return REFUND_RECEIVED;
   }
+
   static get PAUSED() {
     return PAUSED;
   }

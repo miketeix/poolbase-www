@@ -140,9 +140,8 @@ class PoolService {
     console.log('pool.toFeathers()', pool.toFeathers());
     if (pool.id) {
       return feathersClient.service('pools').patch(pool.id, pool.toFeathers());
-    } else {
-      return feathersClient.service('pools').create(pool.toFeathers());
     }
+    return feathersClient.service('pools').create(pool.toFeathers());
   }
 
   /**

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import * as Yup from 'yup';
 import User from '../../../models/User';
 import Pool from '../../../models/Pool';
 import PoolService from '../../../services/Pool';
-
-import * as Yup from 'yup';
 
 import MultiStepForm from '../../MultiStepForm';
 
@@ -13,8 +12,8 @@ import Loader from '../../Loader';
 import { history, isPoolAdmin } from '../../../lib/helpers';
 import { isAuthenticated } from '../../../lib/middleware';
 import { ethereumAddress } from '../../../lib/validators';
-import validationSchemas from './validation/';
-import updateComponents from './components/';
+import validationSchemas from './validation';
+import updateComponents from './components';
 
 /**
  * View flow to confirm a token batch
@@ -22,13 +21,11 @@ import updateComponents from './components/';
  * @param id       URL parameter which is an id of a pool object
  */
 
-const Header = ({ text }) => {
-  return (
-    <div>
-      <h1 className="font-xl">{text}</h1>
-    </div>
-  );
-};
+const Header = ({ text }) => (
+  <div>
+    <h1 className="font-xl">{text}</h1>
+  </div>
+);
 
 const textMap = {
   maxAllocation: {
@@ -57,7 +54,13 @@ class Update extends Component {
   }
 
   async componentDidMount() {
-    const { currentUser, match: { params: { poolId } }, location: { hash } } = this.props;
+    const {
+      currentUser,
+      match: {
+        params: { poolId },
+      },
+      location: { hash },
+    } = this.props;
 
     const updateProperty = hash && hash.substr(1);
 
@@ -93,7 +96,7 @@ class Update extends Component {
       });
     } catch (err) {
       console.log('err', err);
-      //oops something wrong
+      // oops something wrong
     }
   }
 

@@ -3,9 +3,8 @@ function isMetamasInstalled() {
 
   if (web3 === undefined || web3.currentProvider.constructor.name !== 'MetamaskInpageProvider') {
     return false;
-  } else {
-    return true;
   }
+  return true;
 }
 
 export default isMetamasInstalled;

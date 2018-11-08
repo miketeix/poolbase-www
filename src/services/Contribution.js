@@ -11,7 +11,7 @@ class ContributionService {
     return new Promise((resolve, reject) => {
       feathersClient
         .service('contributions')
-        .find({ query: { ownerWallet: ownerWallet } })
+        .find({ query: { ownerWallet } })
         .then(resp => {
           resolve(new Contribution(resp.data[0]));
         })
@@ -90,6 +90,7 @@ class ContributionService {
         onSuccess(contributions);
       }, onError);
   }
+
   /**
    * Get the user's Contributions made to a particular pool
    *

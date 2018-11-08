@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import * as Yup from 'yup';
 import User from '../../../models/User';
 import Pool from '../../../models/Pool';
 import PoolService from '../../../services/Pool';
-
-import * as Yup from 'yup';
 
 import MultiStepForm from '../../MultiStepForm';
 import StepOne from './components/Step_1';
@@ -21,13 +20,11 @@ import { ethereumAddress } from '../../../lib/validators';
  * @param id       URL parameter which is an id of a pool object
  */
 
-const Header = () => {
-  return (
-    <div>
-      <h1 className="font-xl">Confirm token batch</h1>
-    </div>
-  );
-};
+const Header = () => (
+  <div>
+    <h1 className="font-xl">Confirm token batch</h1>
+  </div>
+);
 
 class ConfirmTokenBatch extends Component {
   constructor(props) {
@@ -40,7 +37,12 @@ class ConfirmTokenBatch extends Component {
   }
 
   async componentDidMount() {
-    const { currentUser, match: { params: { poolId } } } = this.props;
+    const {
+      currentUser,
+      match: {
+        params: { poolId },
+      },
+    } = this.props;
     try {
       await isAuthenticated(currentUser);
 
@@ -56,12 +58,15 @@ class ConfirmTokenBatch extends Component {
       });
     } catch (err) {
       console.log('err', err);
-      //oops something wrong
+      // oops something wrong
     }
   }
 
   render() {
-    const { isLoading, pool: { tokenAddress } } = this.state;
+    const {
+      isLoading,
+      pool: { tokenAddress },
+    } = this.state;
 
     return (
       <div>
