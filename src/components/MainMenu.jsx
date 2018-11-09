@@ -28,7 +28,7 @@ class MainMenu extends Component {
   render() {
     const { showMobileMenu } = this.state;
     const { location } = this.props;
-    const isHomePage = location.pathname === '/';
+    const shouldBlueBackground = ['/'].includes(location.pathname);
 
     return (
       <UserConsumer>
@@ -38,7 +38,7 @@ class MainMenu extends Component {
               id="main-menu"
               className={`navbar navbar-expand-lg fixed-top ${
                 showMobileMenu ? 'show' : ''
-              } ${isHomePage && 'is-homepage'} `}
+              } ${shouldBlueBackground && 'is-homepage'} `}
             >
               <button
                 className="navbar-toggler navbar-toggler-right"
@@ -50,7 +50,7 @@ class MainMenu extends Component {
                 />
               </button>
               <Link className="navbar-brand" to="/">
-                {isHomePage ? (
+                {shouldBlueBackground ? (
                   <img src="/img/logo_white.svg" width="140px" alt="Poolbase logo" />
                 ) : (
                   <img src="/img/logo_blue.svg" width="140px" alt="Poolbase logo" />
@@ -91,7 +91,7 @@ class MainMenu extends Component {
                         </NavLink>
                       </div>
                     </li>
-                  )*/}
+                  ) */}
                 </ul>
                 <ul className="navbar-nav">
                   {!state.currentUser && (

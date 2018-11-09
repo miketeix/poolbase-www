@@ -13,12 +13,13 @@ $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 
-
 #home-view {
+  height: 100%;
   .page-wrap {
     background-color: white;
     color: white;
     width: 100%;
+    height: 100%;
   }
   .section-wrap {
     padding: 90px 0 48px;
@@ -49,7 +50,7 @@ $breakpoint-lg: 992px;
     background-color: $gitbook-blue-dark;
   }
   .box-shadow {
-    box-shadow: 0 2px 244px 0 rgba(56,132,255,0.4);
+    box-shadow: 0 2px 244px 0 rgba(56, 132, 255, 0.4);
   }
   .skew {
     transform: skewY(-2deg);
@@ -66,7 +67,6 @@ $breakpoint-lg: 992px;
     width: 100%;
   }
 
-
   section {
     padding: 45px 0;
     @media (min-width: $breakpoint-md) {
@@ -79,13 +79,16 @@ $breakpoint-lg: 992px;
     }
   }
 
-
   .four-columns {
     .row > div {
       margin-bottom: 30px;
-      &:last-child { margin-bottom: 0; }
+      &:last-child {
+        margin-bottom: 0;
+      }
       @media (min-width: $breakpoint-sm) {
-        &:nth-child(3) { margin-bottom: 0; }
+        &:nth-child(3) {
+          margin-bottom: 0;
+        }
       }
       @media (min-width: $breakpoint-md) {
         margin-bottom: 0;
@@ -93,21 +96,21 @@ $breakpoint-lg: 992px;
     }
   }
 
-
   .top-section {
     overflow: hidden;
     padding-top: 480px;
     margin-top: -480px;
+    height: 100%;
     .fabButton {
       line-height: 40px;
       max-width: 320px;
       width: 100%;
-      color: #3884FF;
+      color: #3884ff;
       text-align: center;
       font-size: 16px;
       font-weight: 500;
       border-radius: 99999px;
-      background: #FFFFFF;
+      background: #ffffff;
     }
 
     .bottom-banner {
@@ -123,16 +126,19 @@ $breakpoint-lg: 992px;
         margin-bottom: -4rem;
         a {
           margin-bottom: 15px;
-          &:last-child { margin-bottom: 0; }
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
         @media (min-width: $breakpoint-md) {
           flex-direction: row;
-          a { margin: 0; }
+          a {
+            margin: 0;
+          }
         }
       }
     }
   }
-
 
   .workflow-section {
     text-align: center;
@@ -162,7 +168,9 @@ $breakpoint-lg: 992px;
       .row {
         & > div {
           margin-bottom: 30px;
-          &:last-child { margin-bottom: 0; }
+          &:last-child {
+            margin-bottom: 0;
+          }
           @media (min-width: $breakpoint-md) {
             margin-bottom: 0;
           }
@@ -210,7 +218,9 @@ $breakpoint-lg: 992px;
               overflow: hidden;
               text-align: left;
               font-size: 0.9rem;
-              &:last-child { margin-bottom: 0; }
+              &:last-child {
+                margin-bottom: 0;
+              }
             }
           }
         }
@@ -233,17 +243,23 @@ $breakpoint-lg: 992px;
     }
   }
 
-
   .advantages-section {
     background: #004094;
-    background: -moz-linear-gradient(top, #004094 0%, #008bd1 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, #004094), color-stop(100%, #008bd1));
-    background: -webkit-linear-gradient(top, #004094 0%, #008bd1 100%);
-    background: -o-linear-gradient(top, #004094 0%, #008bd1 100%);
-    background: -ms-linear-gradient(top, #004094 0%, #008bd1 100%);
-    background: linear-gradient(to bottom, #004094 0%, #008bd1 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004094', endColorstr='#008bd1', GradientType=0 );
-    h2 { color: white; }
+    background: -moz-linear-gradient(top, #004094 0%, #3884ff 100%);
+    background: -webkit-gradient(
+      left top,
+      left bottom,
+      color-stop(0%, #004094),
+      color-stop(100%, #3884ff)
+    );
+    background: -webkit-linear-gradient(top, #004094 0%, #3884ff 100%);
+    background: -o-linear-gradient(top, #004094 0%, #3884ff 100%);
+    background: -ms-linear-gradient(top, #004094 0%, #3884ff 100%);
+    background: linear-gradient(to bottom, #004094 0%, #3884ff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004094', endColorstr='#3884FF', GradientType=0 );
+    h2 {
+      color: white;
+    }
     h4 {
       font-size: 1.2rem;
       font-weight: bold;
@@ -252,22 +268,33 @@ $breakpoint-lg: 992px;
       color: white;
       text-decoration: underline;
     }
-    p { color: #d1d1d1; }
+    p {
+      color: #d1d1d1;
+    }
   }
 
-
   .team-section {
-    color: #242A31;
+    color: #242a31;
     margin-bottom: -1px; // Hide a white bottom line, that appears in Chrome.
-    background: #0089cd;
-    background: -moz-radial-gradient(center, ellipse cover, #0089cd 0%, #1f65d6 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #0089cd), color-stop(100%, #1f65d6));
-    background: -webkit-radial-gradient(center, ellipse cover, #0089cd 0%, #1f65d6 100%);
-    background: -o-radial-gradient(center, ellipse cover, #0089cd 0%, #1f65d6 100%);
-    background: -ms-radial-gradient(center, ellipse cover, #0089cd 0%, #1f65d6 100%);
-    background: radial-gradient(ellipse at center, #0089cd 0%, #1f65d6 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0089cd', endColorstr='#1f65d6', GradientType=1 );
-    h2 { color: white; }
+    background: #3884ff;
+    background: -moz-radial-gradient(center, ellipse cover, #3884ff 0%, #1f65d6 100%);
+    background: -webkit-gradient(
+      radial,
+      center center,
+      0px,
+      center center,
+      100%,
+      color-stop(0%, #3884ff),
+      color-stop(100%, #1f65d6)
+    );
+    background: -webkit-radial-gradient(center, ellipse cover, #3884ff 0%, #1f65d6 100%);
+    background: -o-radial-gradient(center, ellipse cover, #3884ff 0%, #1f65d6 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #3884ff 0%, #1f65d6 100%);
+    background: radial-gradient(ellipse at center, #3884ff 0%, #1f65d6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3884FF', endColorstr='#1f65d6', GradientType=1 );
+    h2 {
+      color: white;
+    }
   }
   .team-card {
     text-align: center;
@@ -304,8 +331,6 @@ $breakpoint-lg: 992px;
       }
     }
   }
-
-
 
   #footer {
     padding: 45px 15px 0;
@@ -350,7 +375,9 @@ $breakpoint-lg: 992px;
                   font-size: 1.2rem;
                   color: #74869b;
                 }
-                &:hover i { color: white; }
+                &:hover i {
+                  color: white;
+                }
               }
             }
           }
@@ -366,7 +393,8 @@ $breakpoint-lg: 992px;
       padding-top: 30px;
       padding-bottom: 30px;
       font-size: 0.9rem;
-      .links, .copyright {
+      .links,
+      .copyright {
         line-height: 24px;
       }
       .links a {
@@ -378,7 +406,8 @@ $breakpoint-lg: 992px;
     }
     @media (min-width: $breakpoint-sm) {
       .bottom-line {
-        .links, .copyright {
+        .links,
+        .copyright {
           line-height: 30px;
         }
         .copyright {
@@ -390,7 +419,9 @@ $breakpoint-lg: 992px;
       padding-top: 60px;
       .menu {
         margin-bottom: 45px;
-        ol { max-width: none !important; }
+        ol {
+          max-width: none !important;
+        }
       }
       .bottom-line {
         font-size: 0.8rem;
@@ -401,5 +432,4 @@ $breakpoint-lg: 992px;
       padding-right: 45px;
     }
   }
-
 }

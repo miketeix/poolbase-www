@@ -194,3 +194,15 @@ export const teamList = [
 ];
 
 export const getEtherscanTxLink = txHash => `${config.etherscan}/tx/${txHash}`;
+
+export const footerSocial = [
+  ['fa-github', 'https://rinkeby.poolbase.io'],
+  ['fa-twitter', 'https://rinkeby.poolbase.io'],
+  ['fa-facebook', 'https://rinkeby.poolbase.io'],
+  ['fa-medium', 'https://rinkeby.poolbase.io'],
+  ['fa-reddit-alien', 'https://rinkeby.poolbase.io'],
+  ['fa-instagram', 'https://rinkeby.poolbase.io'],
+  ['fa-youtube', 'https://rinkeby.poolbase.io'],
+  ['fa-telegram', 'https://rinkeby.poolbase.io'],
+  ['fa-linkedin', 'https://rinkeby.poolbase.io'],
+];
