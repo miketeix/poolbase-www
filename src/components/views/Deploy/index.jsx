@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { fromWei } from 'web3-utils';
 
 import { feathersClient } from '../../../lib/feathersClient';
 
@@ -31,6 +32,7 @@ class Deploy extends React.Component {
     this.metamaskModalRef = React.createRef();
     this.pendingTxFieldsModalRef = React.createRef();
   }
+
   async componentDidMount() {
     window.scrollTo(0, 0);
     const {
@@ -44,11 +46,11 @@ class Deploy extends React.Component {
     const serviceName = poolId ? 'pools' : 'contributions';
 
     try {
-      const resource = await feathersClient //either pool or contribution
+      const resource = await feathersClient // either pool or contribution
         .service(serviceName)
         .get(resourceId);
 
-      this.poolId = poolId ? poolId : resource.pool._id;
+      this.poolId = poolId || resource.pool._id;
 
       const { ownerAddress, pendingTx } = resource;
 
@@ -58,10 +60,12 @@ class Deploy extends React.Component {
         return;
       }
 
-      const { toAddress, amount, gasLimit, txData } = pendingTx;
+      const { toAddress, amount, gasLimit, data } = pendingTx;
 
-      this.myEtherWalletUrl = `https://www.myetherwallet.com/?to=${toAddress.toUpperCase()}&gaslimit=${gasLimit}&data=${txData}&value=${amount}#send-transaction`;
-      this.myCryptoUrl = `https://www.mycrypto.com/?to=${toAddress.toUpperCase()}&gasLimit=${gasLimit}&data=${txData}&value=${amount}#send-transaction`;
+      this.myEtherWalletUrl = `https://www.myetherwallet.com/?to=${toAddress.toUpperCase()}&gaslimit=${gasLimit}&data=${data}&value=${fromWei(
+        amount,
+      )}#send-transaction`;
+      this.myCryptoUrl = `https://www.mycrypto.com/?to=${toAddress.toUpperCase()}&gasLimit=${gasLimit}&data=${data}&value=${amount}#send-transaction`;
 
       this.setState({
         ownerAddress,
@@ -158,6 +162,7 @@ class Deploy extends React.Component {
         console.log('err', err);
       });
   }
+
   handleWalletProviderClick(walletProvider) {
     return () => {
       switch (walletProvider) {
