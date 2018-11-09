@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import Footer from '../Footer.jsx';
 import PillButton from '../PillButton.jsx';
 import TeamCard from '../TeamCard.jsx';
 import { teamList } from '../../constants';
@@ -15,22 +16,11 @@ class Home extends Component {
       showMobileMenu: false,
       workflowSwitch: true,
     };
-
-    this.footerSocial = [
-      ['fa-github', 'https://rinkeby.poolbase.io'],
-      ['fa-twitter', 'https://rinkeby.poolbase.io'],
-      ['fa-facebook', 'https://rinkeby.poolbase.io'],
-      ['fa-medium', 'https://rinkeby.poolbase.io'],
-      ['fa-reddit-alien', 'https://rinkeby.poolbase.io'],
-      ['fa-instagram', 'https://rinkeby.poolbase.io'],
-      ['fa-youtube', 'https://rinkeby.poolbase.io'],
-      ['fa-telegram', 'https://rinkeby.poolbase.io'],
-      ['fa-linkedin', 'https://rinkeby.poolbase.io'],
-    ];
   }
 
   render() {
-    return <div id="home-view">
+    return (
+      <div id="home-view">
         <div className="page-wrap">
           <div className="top-section bg-color-light box-shadow">
             <div className="relative">
@@ -44,7 +34,11 @@ class Home extends Component {
                     </PillButton>
                   </div>
                   <div className="col-sm-7">
-                    <img className="pb-screenshot" src="/img/screenshots.png" alt="Poolbase Screenshot" />
+                    <img
+                      className="pb-screenshot"
+                      src="/img/screenshots.png"
+                      alt="Poolbase Screenshot"
+                    />
                   </div>
                 </div>
               </div>
@@ -52,16 +46,40 @@ class Home extends Component {
                 <div className="skew2 cover-all bg-color-medium" />
                 <div className="relative">
                   <div className="container wallet-providers">
-                    <a className="wallet-logo" href="https://metamask.io/" target="_blank" rel="noopener noreferrer">
+                    <a
+                      className="wallet-logo"
+                      href="https://metamask.io/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <img src="/img/metamask-logo-white.png" height="60px" alt="Metamask logo" />
                     </a>
-                    <a className="wallet-logo" href="https://mycrypto.com/" target="_blank" rel="noopener noreferrer">
+                    <a
+                      className="wallet-logo"
+                      href="https://mycrypto.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <img src="/img/mycrypto-logo-white.png" height="60px" alt="My Crypto logo" />
                     </a>
-                    <a className="wallet-logo" href="https://www.myetherwallet.com/" target="_blank" rel="noopener noreferrer">
-                      <img src="/img/myetherwallet_logo_white.png" height="60px" alt="My Ether Wallet logo" />
+                    <a
+                      className="wallet-logo"
+                      href="https://www.myetherwallet.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="/img/myetherwallet_logo_white.png"
+                        height="60px"
+                        alt="My Ether Wallet logo"
+                      />
                     </a>
-                    <a className="wallet-logo" href="https://www.ethereum.org/" target="_blank" rel="noopener noreferrer">
+                    <a
+                      className="wallet-logo"
+                      href="https://www.ethereum.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <img src="/img/ethereum-logo-white.png" height="70px" alt="Ethereum.org" />
                     </a>
                   </div>
@@ -74,19 +92,22 @@ class Home extends Component {
             <h2>Our Platform</h2>
 
             <div className="switch">
-              <span className={this.state.workflowSwitch ? 'active' : ''} onClick={() => this.setState(
-                    { workflowSwitch: true },
-                  )}>
+              <span
+                className={this.state.workflowSwitch ? 'active' : ''}
+                onClick={() => this.setState({ workflowSwitch: true })}
+              >
                 For investors
               </span>
-              <span className={!this.state.workflowSwitch ? 'active' : ''} onClick={() => this.setState(
-                    { workflowSwitch: false },
-                  )}>
+              <span
+                className={!this.state.workflowSwitch ? 'active' : ''}
+                onClick={() => this.setState({ workflowSwitch: false })}
+              >
                 For pool creators
               </span>
             </div>
 
-            {this.state.workflowSwitch && <div>
+            {this.state.workflowSwitch && (
+              <div>
                 <div className="steps container">
                   <div className="row">
                     <div className="col-md-4">
@@ -109,8 +130,8 @@ class Home extends Component {
                       <div className="content">
                         <div className="circle">2</div>
                         <p>
-                          With some clicks you can participate in the project. Send a
-                          transaction to the pool smart contract and you are in!
+                          With some clicks you can participate in the project. Send a transaction to
+                          the pool smart contract and you are in!
                         </p>
                       </div>
                     </div>
@@ -119,8 +140,8 @@ class Home extends Component {
                       <div className="content">
                         <div className="circle">3</div>
                         <p>
-                          After the sale is finished, you can claim your exact number of token
-                          with a simple transaction.
+                          After the sale is finished, you can claim your exact number of token with
+                          a simple transaction.
                         </p>
                       </div>
                     </div>
@@ -131,9 +152,11 @@ class Home extends Component {
                     Learn More
                   </a>
                 </div>
-              </div>}
+              </div>
+            )}
 
-            {!this.state.workflowSwitch && <div>
+            {!this.state.workflowSwitch && (
+              <div>
                 <div className="steps container">
                   <div className="row">
                     <div className="col-md-4">
@@ -142,9 +165,9 @@ class Home extends Component {
                       <div className="content">
                         <div className="circle">1</div>
                         <p>
-                          We will create an individual smart-contract for your pool, you have
-                          the full control. We have no access to the funds. You will receive a
-                          custom link for your investors.
+                          We will create an individual smart-contract for your pool, you have the
+                          full control. We have no access to the funds. You will receive a custom
+                          link for your investors.
                         </p>
                       </div>
                     </div>
@@ -164,8 +187,8 @@ class Home extends Component {
                       <div className="content">
                         <div className="circle">3</div>
                         <p>
-                          Once you confirmed the token, your can lay back. The investors can now
-                          get their token.
+                          Once you confirmed the token, your can lay back. The investors can now get
+                          their token.
                         </p>
                       </div>
                     </div>
@@ -176,7 +199,8 @@ class Home extends Component {
                     Learn More
                   </a>
                 </div>
-              </div>}
+              </div>
+            )}
           </section>
 
           <section className="advantages-section four-columns">
@@ -196,18 +220,18 @@ class Home extends Component {
                 <div className="col-sm-6 col-md-3">
                   <h4>Quick and easy to use</h4>
                   <p>
-                    We build PoolBase to enable people around the globe to take part in the new
-                    way of investing. It has never been easier.
+                    We build PoolBase to enable people around the globe to take part in the new way
+                    of investing. It has never been easier.
                   </p>
                   <p>
-                    <Link to={`/pools/create`}>Create your Pool</Link>
+                    <Link to="/pools/create">Create your Pool</Link>
                   </p>
                 </div>
                 <div className="col-sm-6 col-md-3">
                   <h4>Low cost</h4>
                   <p>
-                    Investing collectively has never been more efficient. By using newest
-                    technology we are able to provide lowest fees.
+                    Investing collectively has never been more efficient. By using newest technology
+                    we are able to provide lowest fees.
                   </p>
                   <p>
                     <a href="#">Read more about the fees</a>
@@ -216,8 +240,8 @@ class Home extends Component {
                 <div className="col-sm-6 col-md-3">
                   <h4>The future is here</h4>
                   <p>
-                    Blockchain is the accelerator for the ideas of tomorrow. Fund your own
-                    project or participate directly in new ideas.
+                    Blockchain is the accelerator for the ideas of tomorrow. Fund your own project
+                    or participate directly in new ideas.
                   </p>
                   <p>
                     <a href="#">Read more about our product</a>
@@ -238,86 +262,10 @@ class Home extends Component {
             </div>
           </section>
 
-          <footer id="footer">
-            <div className="menu container-fluid four-columns">
-              <div className="row">
-                <div className="col-sm-6 col-md-3">
-                  <h4>Get started</h4>
-                  <ul>
-                    <li>
-                      <a href="#">FAQs</a>
-                    </li>
-                    <li>
-                      <a href="#">For participants</a>
-                    </li>
-                    <li>
-                      <a href="#">For pool creators</a>
-                    </li>
-                    <li>
-                      <a href="#">For developers</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="col-sm-6 col-md-3">
-                  <h4>The company</h4>
-                  <ul>
-                    <li>
-                      <a href="#">Our vision</a>
-                    </li>
-                    <li>
-                      <a href="#">PoolBase company</a>
-                    </li>
-                    <li>
-                      <a href="#">Meet the team</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="col-sm-6 col-md-3">
-                  <h4>Support</h4>
-                  <ul>
-                    <li>
-                      <a href="https://poolbase.zendesk.com">Help center</a>
-                    </li>
-                    <li>
-                      <a href="">Contact us</a>
-                    </li>
-                    <li>
-                      <a href="https://t.me/joinchat/Hu3hDRJXVFf4m1DFUNxaKQ">
-                        Telegram support
-                      </a>
-                    </li>
-                    <li>
-                      <a href="">Reddit group</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="col-sm-6 col-md-3">
-                  <h4>Social</h4>
-                  <ol>
-                    {this.footerSocial.map((v) => <li key={v[0]}>
-                        <a href={v[1]}>
-                          <i className={'fa fa-fw ' + v[0]} />
-                        </a>
-                      </li>)}
-                  </ol>
-                </div>
-              </div>
-            </div>
-            <div className="divider" />
-            <div className="container-fluid bottom-line">
-              <div className="row">
-                <div className="col-xs-12 col-sm-6 links">
-                  <a href="#">Terms &amp; Conditions</a>
-                  <a href="#">Privacy</a>
-                </div>
-                <div className="col-xs-12 col-sm-6 copyright">
-                  Copyright &copy; {new Date().getFullYear()} PoolBase
-                </div>
-              </div>
-            </div>
-          </footer>
+          <Footer />
         </div>
-      </div>;
+      </div>
+    );
   }
 }
 
