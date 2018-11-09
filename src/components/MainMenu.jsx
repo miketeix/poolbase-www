@@ -28,7 +28,7 @@ class MainMenu extends Component {
   render() {
     const { showMobileMenu } = this.state;
     const { location } = this.props;
-    const shouldBlueBackground = ['/'].includes(location.pathname);
+    const shouldBlueBackground = ['/', '/template'].includes(location.pathname);
 
     return (
       <UserConsumer>

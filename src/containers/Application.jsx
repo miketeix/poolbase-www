@@ -16,6 +16,7 @@ import EditProfile from '../components/views/EditProfile';
 import SignIn from '../components/views/SignIn';
 import SignUp from '../components/views/SignUp';
 import Home from '../components/views/Home';
+import Template from '../components/views/Template';
 
 import ViewPool from '../components/views/ViewPool';
 import CreatePool from '../components/views/CreatePool';
@@ -143,6 +144,7 @@ class Application extends Component {
                           path="/dashboard"
                           render={props => <Dashboard currentUser={currentUser} {...props} />}
                         />
+                        <Route exact path="/template" render={props => <Template {...props} />} />
                         <CurrentUserProtectedRoute
                           exact
                           path="/signin"
