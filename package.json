@@ -53,6 +53,7 @@
     "web3": "1.0.0-beta.33",
     "web3-eth-accounts": "^1.0.0-beta.18",
     "web3-provider-engine": "^13.3.3",
+    "web3-utils": "^1.0.0-beta.36",
     "whatwg-fetch": "^2.0.3",
     "yup": "^0.25.1"
   },
