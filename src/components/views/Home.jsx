@@ -22,7 +22,7 @@ class Home extends Component {
     return (
       <div id="home-view">
         <div className="page-wrap">
-          <div className="top-section bg-color-light box-shadow">
+          <div className="top-section bg-color-light box-shadow" style={{ height: 'initial' }}>
             <div className="relative">
               <div className="container">
                 <div className="row">
